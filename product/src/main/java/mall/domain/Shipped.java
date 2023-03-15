@@ -15,6 +15,7 @@ public class Shipped extends AbstractEvent {
     private Long customerId;
     private String address;
     private String status;
+    private Integer qty;
 }
 
 

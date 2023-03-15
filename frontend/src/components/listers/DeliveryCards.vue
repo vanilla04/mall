@@ -74,6 +74,7 @@
                 'customerId': 0,
                 'address': '',
                 'status': '',
+                'qty': 0,
             }
         },
         methods:{

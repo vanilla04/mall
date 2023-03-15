@@ -15,4 +15,5 @@ public class ShippingCanceled extends AbstractEvent {
     private Long customerId;
     private String address;
     private String status;
+    private Integer qty;
 }

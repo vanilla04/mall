@@ -71,6 +71,7 @@
                     { text: "customerId", value: "customerId" },
                     { text: "productId", value: "productId" },
                     { text: "qty", value: "qty" },
+                    { text: "status", value: "status" },
                 ],
             order : [],
             newValue: {},
@@ -92,6 +93,7 @@
                 'customerId': 0,
                 'productId': 0,
                 'qty': 0,
+                'status': '',
             }
         },
         methods: {

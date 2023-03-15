@@ -61,6 +61,12 @@ public class Delivery  {
     
     
     private String status;
+    
+    
+    
+    
+    
+    private Integer qty;
 
     @PostPersist
     public void onPostPersist(){
