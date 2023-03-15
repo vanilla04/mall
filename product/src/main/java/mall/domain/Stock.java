@@ -51,7 +51,7 @@ public class Stock  {
 
 
 
-    public static void decreaseStock(Shipped shipped){
+    public static void decreaseStock(DeiliveryCompleted deiliveryCompleted){
 
         /** Example 1:  new item 
         Stock stock = new Stock();
@@ -61,7 +61,7 @@ public class Stock  {
 
         /** Example 2:  finding and process
         
-        repository().findById(shipped.get???()).ifPresent(stock->{
+        repository().findById(deiliveryCompleted.get???()).ifPresent(stock->{
             
             stock // do something
             repository().save(stock);
@@ -72,7 +72,7 @@ public class Stock  {
 
         
     }
-    public static void increaseStock(ShippingCanceled shippingCanceled){
+    public static void increaseStock(DeliveryCanceled deliveryCanceled){
 
         /** Example 1:  new item 
         Stock stock = new Stock();
@@ -82,7 +82,7 @@ public class Stock  {
 
         /** Example 2:  finding and process
         
-        repository().findById(shippingCanceled.get???()).ifPresent(stock->{
+        repository().findById(deliveryCanceled.get???()).ifPresent(stock->{
             
             stock // do something
             repository().save(stock);

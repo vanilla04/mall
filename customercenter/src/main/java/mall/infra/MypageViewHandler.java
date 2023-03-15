@@ -40,16 +40,16 @@ public class MypageViewHandler {
 
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenShipped_then_UPDATE_1(@Payload Shipped shipped) {
+    public void whenDeiliveryCompleted_then_UPDATE_1(@Payload DeiliveryCompleted deiliveryCompleted) {
         try {
-            if (!shipped.validate()) return;
+            if (!deiliveryCompleted.validate()) return;
                 // view 객체 조회
 
-                List<Mypage> mypageList = mypageRepository.findByOrderId(shipped.getOrderId());
+                List<Mypage> mypageList = mypageRepository.findByOrderId(deiliveryCompleted.getOrderId());
                 for(Mypage mypage : mypageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setAddress(shipped.getAddress());
-                    mypage.setStatus(shipped.getStatus());
+                    mypage.setAddress(deiliveryCompleted.getAddress());
+                    mypage.setStatus(deiliveryCompleted.getStatus());
                 // view 레파지 토리에 save
                 mypageRepository.save(mypage);
                 }
@@ -59,15 +59,15 @@ public class MypageViewHandler {
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenShippingCanceled_then_UPDATE_2(@Payload ShippingCanceled shippingCanceled) {
+    public void whenDeliveryCanceled_then_UPDATE_2(@Payload DeliveryCanceled deliveryCanceled) {
         try {
-            if (!shippingCanceled.validate()) return;
+            if (!deliveryCanceled.validate()) return;
                 // view 객체 조회
 
-                List<Mypage> mypageList = mypageRepository.findByOrderId(shippingCanceled.getOrderId());
+                List<Mypage> mypageList = mypageRepository.findByOrderId(deliveryCanceled.getOrderId());
                 for(Mypage mypage : mypageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setStatus(shippingCanceled.getStatus());
+                    mypage.setStatus(deliveryCanceled.getStatus());
                 // view 레파지 토리에 save
                 mypageRepository.save(mypage);
                 }

@@ -1,7 +1,7 @@
 package mall.domain;
 
-import mall.domain.Shipped;
-import mall.domain.ShippingCanceled;
+import mall.domain.DeiliveryCompleted;
+import mall.domain.DeliveryCanceled;
 import mall.DeliveryApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -72,16 +72,16 @@ public class Delivery  {
     public void onPostPersist(){
 
 
-        Shipped shipped = new Shipped(this);
-        shipped.publishAfterCommit();
+        DeiliveryCompleted deiliveryCompleted = new DeiliveryCompleted(this);
+        deiliveryCompleted.publishAfterCommit();
 
     }
     @PostUpdate
     public void onPostUpdate(){
 
 
-        ShippingCanceled shippingCanceled = new ShippingCanceled(this);
-        shippingCanceled.publishAfterCommit();
+        DeliveryCanceled deliveryCanceled = new DeliveryCanceled(this);
+        deliveryCanceled.publishAfterCommit();
 
     }
 

@@ -1,12 +1,12 @@
 package mall.domain;
 
+import mall.domain.*;
 import mall.infra.AbstractEvent;
-import lombok.Data;
+import lombok.*;
 import java.util.*;
-
-
 @Data
-public class Shipped extends AbstractEvent {
+@ToString
+public class DeliveryCanceled extends AbstractEvent {
 
     private Long id;
     private Long orderId;
@@ -17,3 +17,5 @@ public class Shipped extends AbstractEvent {
     private String status;
     private Integer qty;
 }
+
+

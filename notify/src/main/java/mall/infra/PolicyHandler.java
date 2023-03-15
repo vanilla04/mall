@@ -35,11 +35,11 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='ShippingCanceled'")
-    public void wheneverShippingCanceled_Notify(@Payload ShippingCanceled shippingCanceled){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryCanceled'")
+    public void wheneverDeliveryCanceled_Notify(@Payload DeliveryCanceled deliveryCanceled){
 
-        ShippingCanceled event = shippingCanceled;
-        System.out.println("\n\n##### listener Notify : " + shippingCanceled + "\n\n");
+        DeliveryCanceled event = deliveryCanceled;
+        System.out.println("\n\n##### listener Notify : " + deliveryCanceled + "\n\n");
 
 
         
@@ -49,11 +49,11 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Shipped'")
-    public void wheneverShipped_Notify(@Payload Shipped shipped){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeiliveryCompleted'")
+    public void wheneverDeiliveryCompleted_Notify(@Payload DeiliveryCompleted deiliveryCompleted){
 
-        Shipped event = shipped;
-        System.out.println("\n\n##### listener Notify : " + shipped + "\n\n");
+        DeiliveryCompleted event = deiliveryCompleted;
+        System.out.println("\n\n##### listener Notify : " + deiliveryCompleted + "\n\n");
 
 
         
