@@ -31,7 +31,7 @@
                         </v-fab-transition>
                     </template>
 
-                    <Stock :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <Product :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -50,12 +50,12 @@
 
 <script>
     const axios = require('axios').default;
-    import Stock from './../Stock.vue';
+    import Product from './../Product.vue';
 
     export default {
-        name: 'StockManager',
+        name: 'ProductManager',
         components: {
-            Stock,
+            Product,
         },
         props: {
             offline: Boolean,
@@ -71,7 +71,7 @@
                     { text: "productName", value: "productName" },
                     { text: "stock", value: "stock" },
                 ],
-            stock : [],
+            product : [],
             newValue: {},
             tick : true,
             openDialog : false,
@@ -82,9 +82,9 @@
                 return;
             }
 
-            var temp = await axios.get(axios.fixUrl('/stocks'))
-            temp.data._embedded.stocks.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.stocks;
+            var temp = await axios.get(axios.fixUrl('/products'))
+            temp.data._embedded.products.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.products;
 
             this.newValue = {
                 'productId': 0,

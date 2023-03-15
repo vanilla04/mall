@@ -65,13 +65,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key="stocks"
-                        to="/stocks"
+                        key="products"
+                        to="/products"
                         @click="changeUrl()"
                         color="deep-purple lighten-2"
                         style="font-weight:700;"
                     >
-                        Stock
+                        Product
                     </v-list-item>
 
 
@@ -193,16 +193,16 @@
                                             class="mx-auto"
                                             outlined
                                             rounded
-                                            key="stocks"
-                                            to="/stocks"
+                                            key="products"
+                                            to="/products"
                                             @click="changeUrl()"
                                             color="deep-purple lighten-2"
                                             style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                                         >
-                                            Stock
+                                            Product
                                         </v-btn>
                                     </template>
-                                    <span>Stock</span>
+                                    <span>Product</span>
                                 </v-tooltip>
                             </v-card-actions>
                         </v-card>

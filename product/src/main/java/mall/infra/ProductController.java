@@ -13,11 +13,11 @@ import javax.transaction.Transactional;
 
 
 @RestController
-// @RequestMapping(value="/stocks")
+// @RequestMapping(value="/products")
 @Transactional
-public class StockController {
+public class ProductController {
     @Autowired
-    StockRepository stockRepository;
+    ProductRepository productRepository;
 
 
 

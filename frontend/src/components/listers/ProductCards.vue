@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 style = "margin-left:4.5%; margin-top:-10px;">Stock</h1>
+        <h1 style = "margin-left:4.5%; margin-top:-10px;">Product</h1>
         <v-col style="margin-bottom:40px;">
             <div class="text-center">
                 <v-dialog
@@ -10,7 +10,7 @@
                         hide-overlay
                         transition="dialog-bottom-transition"
                 >
-                    <Stock :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
+                    <Product :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
                             @add="append" v-if="tick"/>
 
                     <v-btn
@@ -33,7 +33,7 @@
             </div>
         </v-col>
         <v-row>
-            <Stock :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
+            <Product :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
         </v-row>
     </div>
 </template>
@@ -41,12 +41,12 @@
 <script>
 
     const axios = require('axios').default;
-    import Stock from './../Stock.vue';
+    import Product from './../Product.vue';
 
     export default {
-        name: 'StockManager',
+        name: 'ProductManager',
         components: {
-            Stock,
+            Product,
         },
         props: {
             offline: Boolean
@@ -64,8 +64,8 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/stocks'))
-            me.values = temp.data._embedded.stocks;
+            var temp = await axios.get(axios.fixUrl('/products'))
+            me.values = temp.data._embedded.products;
             
             me.newValue = {
                 'productId': 0,

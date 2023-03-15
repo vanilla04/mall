@@ -11,8 +11,8 @@ import OrderDetail from "./components/listers/OrderDetail"
 import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
-import StockManager from "./components/listers/StockCards"
-import StockDetail from "./components/listers/StockDetail"
+import ProductManager from "./components/listers/ProductCards"
+import ProductDetail from "./components/listers/ProductDetail"
 
 
 
@@ -46,14 +46,14 @@ export default new Router({
             },
 
             {
-                path: '/stocks',
-                name: 'StockManager',
-                component: StockManager
+                path: '/products',
+                name: 'ProductManager',
+                component: ProductManager
             },
             {
-                path: '/stocks/:id',
-                name: 'StockDetail',
-                component: StockDetail
+                path: '/products/:id',
+                name: 'ProductDetail',
+                component: ProductDetail
             },
 
 

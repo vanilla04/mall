@@ -4,7 +4,7 @@ import mall.domain.*;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel="stocks", path="stocks")
-public interface StockRepository extends PagingAndSortingRepository<Stock, Long>{
+@RepositoryRestResource(collectionResourceRel="products", path="products")
+public interface ProductRepository extends PagingAndSortingRepository<Product, Long>{
 
 }

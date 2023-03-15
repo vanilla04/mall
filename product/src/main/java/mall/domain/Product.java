@@ -8,10 +8,10 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="Stock_table")
+@Table(name="Product_table")
 @Data
 
-public class Stock  {
+public class Product  {
 
 
     
@@ -43,9 +43,9 @@ public class Stock  {
     private Integer stock;
 
 
-    public static StockRepository repository(){
-        StockRepository stockRepository = ProductApplication.applicationContext.getBean(StockRepository.class);
-        return stockRepository;
+    public static ProductRepository repository(){
+        ProductRepository productRepository = ProductApplication.applicationContext.getBean(ProductRepository.class);
+        return productRepository;
     }
 
 
@@ -54,17 +54,17 @@ public class Stock  {
     public static void decreaseStock(DeiliveryCompleted deiliveryCompleted){
 
         /** Example 1:  new item 
-        Stock stock = new Stock();
-        repository().save(stock);
+        Product product = new Product();
+        repository().save(product);
 
         */
 
         /** Example 2:  finding and process
         
-        repository().findById(deiliveryCompleted.get???()).ifPresent(stock->{
+        repository().findById(deiliveryCompleted.get???()).ifPresent(product->{
             
-            stock // do something
-            repository().save(stock);
+            product // do something
+            repository().save(product);
 
 
          });
@@ -75,17 +75,17 @@ public class Stock  {
     public static void increaseStock(DeliveryCanceled deliveryCanceled){
 
         /** Example 1:  new item 
-        Stock stock = new Stock();
-        repository().save(stock);
+        Product product = new Product();
+        repository().save(product);
 
         */
 
         /** Example 2:  finding and process
         
-        repository().findById(deliveryCanceled.get???()).ifPresent(stock->{
+        repository().findById(deliveryCanceled.get???()).ifPresent(product->{
             
-            stock // do something
-            repository().save(stock);
+            product // do something
+            repository().save(product);
 
 
          });

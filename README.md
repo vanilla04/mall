@@ -44,7 +44,7 @@ mvn spring-boot:run
 ```
 - product
 ```
- http :8088/stocks id="id" productId="productId" productName="productName" stock="stock" 
+ http :8088/products id="id" productId="productId" productName="productName" stock="stock" 
 ```
 - notify
 ```
